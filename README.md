@@ -44,3 +44,25 @@ GPL. Please refer to the LICENSE file for detailed information.
 Patches should be submitted to the ffmpeg-devel mailing list using
 `git format-patch` or `git send-email`. Github pull requests should be
 avoided because they are not part of our review process and will be ignored.
+
+
+nasm.exe复制到Qt bin目录
+
+FFMPEG_DIR=$USERPROFILE/ffmpeg
+./configure \
+  --prefix=$FFMPEG_DIR \
+  --disable-everything \
+  --enable-static \
+  --disable-doc \
+  --enable-avcodec \
+  --enable-avformat \
+  --enable-avutil \
+  --enable-swscale \
+  --enable-decoder=h264 \
+  --enable-parser=h264 \
+  --enable-demuxer=h264 \
+  --enable-protocol=tcp \
+  --enable-filter=scale \
+  --enable-filter=format
+
+mingw32-make -j install
