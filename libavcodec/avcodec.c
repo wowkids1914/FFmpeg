@@ -152,8 +152,6 @@ int attribute_align_arg avcodec_open2(AVCodecContext *avctx, const AVCodec *code
     if (avcodec_is_open(avctx))
         return 0;
 
-    avctx->flags |= AV_CODEC_FLAG_LOW_DELAY;
-
     if (!codec && !avctx->codec) {
         av_log(avctx, AV_LOG_ERROR, "No codec provided to avcodec_open2()\n");
         return AVERROR(EINVAL);

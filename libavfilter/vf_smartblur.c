@@ -111,7 +111,7 @@ static av_cold int init(AVFilterContext *ctx)
         s->alpha.threshold = s->luma.threshold;
 
     s->luma.quality = s->chroma.quality = s->alpha.quality = 3.0;
-    s->sws_flags = SWS_BICUBIC;
+    s->sws_flags = SWS_AREA;
 
     av_log(ctx, AV_LOG_VERBOSE,
            "luma_radius:%f luma_strength:%f luma_threshold:%d "

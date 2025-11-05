@@ -46,9 +46,11 @@ Patches should be submitted to the ffmpeg-devel mailing list using
 avoided because they are not part of our review process and will be ignored.
 
 
-nasm.exe复制到Qt bin目录
+nasm.exe复制到C:\Qt\Tools\QtCreator\bin
 
 FFMPEG_DIR=$USERPROFILE/ffmpeg
+SDL2_DIR=./SDL2-2.32.10/x86_64-w64-mingw32
+export PATH="$SDL2_DIR/bin:$PATH"
 ./configure \
   --prefix=$FFMPEG_DIR \
   --disable-everything \
@@ -63,6 +65,8 @@ FFMPEG_DIR=$USERPROFILE/ffmpeg
   --enable-demuxer=h264 \
   --enable-protocol=tcp \
   --enable-filter=scale \
-  --enable-filter=format
+  --enable-filter=format \
+  --enable-debug=3 --disable-optimizations --disable-stripping
+
 
 mingw32-make -j install

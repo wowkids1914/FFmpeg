@@ -45,3 +45,4 @@
 /libavfilter/vulkan/*.c
 /.*/
 !/.forgejo/
+/SDL2-2.32.10/
